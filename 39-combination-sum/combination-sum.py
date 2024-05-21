@@ -1,16 +1,16 @@
 class Solution(object):
-    def combinationSum(self, candi, target):
-        candi.sort()
-        result=[]
-        def dfs(start, target, cursub, result):
+    def combinationSum(self, can, target):
+        can.sort()
+        res=[]
+        def backtrack(start, target, cur_subset, res):
             if target==0:
-                result.append(cursub[:])
-                return
-            for i in range(start, len(candi)):
-                if candi[i] > target:
+                res.append(cur_subset[:])
+            for i in range(start, len(can)):
+                if can[i]>target:
                     break
-                cursub.append(candi[i])
-                dfs(i, target-candi[i],cursub,result)
-                cursub.pop()
-        dfs(0,target,[],result)
-        return result
+                cur_subset.append(can[i])
+                backtrack(i, target-can[i],cur_subset,res)
+                cur_subset.pop()
+        backtrack(0,target,[],res)
+        return res
+        
