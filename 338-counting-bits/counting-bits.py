@@ -1,10 +1,7 @@
 class Solution(object):
     def countBits(self, n):
-        res=[]
-        for i in range(0,n+1):
-            count=0
-            for j in bin(i):
-                if j=="1": count+=1
-            res.append(count)
+        res=[0]*(n+1)
+        for i in range(1,n+1):
+            res[i]= res[i//2]+ (i%2)
         return res
         
