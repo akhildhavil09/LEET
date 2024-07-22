@@ -16,14 +16,12 @@ class Solution(object):
             curr=tmp
         
         # merging the first and 2nd half
-        first_half= head
-        while prev:
-            next_first= first_half.next
-            next_second= prev.next
-            first_half.next= prev
-            prev.next= next_first
-            first_half=next_first
-            prev= next_second
+        first,second= head, prev
+        while second:
+            tmp1,tmp2= first.next, second.next
+            first.next= second
+            second.next= tmp1
+            first, second= tmp1,tmp2
 
 
         
