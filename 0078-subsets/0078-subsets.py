@@ -1,12 +1,16 @@
 class Solution(object):
     def subsets(self, nums):
         res=[]
-        def dfs(start,subset):
-            res.append(subset[:])
-            for i in range(start, len(nums)):
-                subset.append(nums[i])
-                dfs(i+1, subset)
-                subset.pop()
-        dfs(0,[])
-        return res
+        subset=[]
+
+        def helper(i):
+            if i==len(nums):
+                res.append(subset[::])
+                return
+            subset.append(nums[i])
+            helper(i+1)
+            subset.pop()
+            helper(i+1)
         
+        helper(0)
+        return res
