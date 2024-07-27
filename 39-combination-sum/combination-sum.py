@@ -1,16 +1,17 @@
 class Solution(object):
-    def combinationSum(self, can, target):
-        can.sort()
+    def combinationSum(self, nums, target):
         res=[]
-        def backtrack(start, target, cur_subset, res):
-            if target==0:
-                res.append(cur_subset[:])
-            for i in range(start, len(can)):
-                if can[i]>target:
-                    break
-                cur_subset.append(can[i])
-                backtrack(i, target-can[i],cur_subset,res)
-                cur_subset.pop()
-        backtrack(0,target,[],res)
+        sub=[]
+
+        def dfs(index):
+            if sum(sub)==target:
+                res.append(sub[:])
+                return
+            if sum(sub)>target or index>=len(nums):
+                return
+            sub.append(nums[index])
+            dfs(index)
+            sub.pop()
+            dfs(index+1)
+        dfs(0)
         return res
-        
