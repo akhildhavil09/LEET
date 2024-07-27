@@ -1,13 +1,13 @@
 class Solution(object):
     def permute(self, nums):
         res=[]
-        def dfs(cur, remain):
-            if not remain: 
+        def dfs(cur,remains):
+            if not remains:
                 res.append(cur[:])
                 return
-            for i in range(len(remain)):
-                cur.append(remain[i])
-                dfs(cur, remain[:i]+remain[i+1:])
+            for i in range(len(remains)):
+                cur.append(remains[i])
+                dfs(cur,remains[:i]+remains[i+1:])
                 cur.pop()
         dfs([],nums)
         return res
