@@ -23,10 +23,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Array
 |  |
 | ------- |
+| [0046-permutations](https://github.com/akhildhavil09/LEET/tree/master/0046-permutations) |
 | [0078-subsets](https://github.com/akhildhavil09/LEET/tree/master/0078-subsets) |
 ## Backtracking
 |  |
 | ------- |
+| [0046-permutations](https://github.com/akhildhavil09/LEET/tree/master/0046-permutations) |
 | [0078-subsets](https://github.com/akhildhavil09/LEET/tree/master/0078-subsets) |
 ## Bit Manipulation
 |  |
