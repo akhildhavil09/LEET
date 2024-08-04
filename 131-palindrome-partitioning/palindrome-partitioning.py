@@ -1,23 +1,19 @@
 class Solution(object):
     def partition(self, s):
-        res=[]
-        path=[]
-        def palinhelper(index):
-            if index==len(s):
+        def palin(sub):
+            return sub==sub[::-1]
+        def parti(start,path):
+            if start==len(s):
                 res.append(path[:])
                 return
-            for i in range(index,len(s)):
-                if ispalin(s,index,i):
-                    path.append(s[index:i+1])
-                    palinhelper(i+1)
+            
+            for end in range(start, len(s)):
+                substring= s[start:end+1]
+                if palin(substring):
+                    path.append(substring)
+                    parti(end+1,path)
                     path.pop()
-        def ispalin(s,start,end):
-            while start<= end:
-                if s[start]!=s[end]:
-                    return False
-                start+=1
-                end-=1
-            return True
-        palinhelper(0)
+        res=[]
+        parti(0,[])
         return res
         
