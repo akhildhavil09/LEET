@@ -1,36 +1,37 @@
-class Trinode(object):
+class TrieNode(object):
     def __init__(self):
-        self.children={}
-        self.endofword= False
+        self.children=[None]*26
+        self.end=False
 class Trie(object):
 
     def __init__(self):
-        self.root= Trinode()
+        self.root= TrieNode()
 
     def insert(self, word):
         cur= self.root
         for c in word:
-            if c not in cur.children:
-                cur.children[c]= Trinode()
-            cur=cur.children[c]
-        cur.endofword= True
-        
+            i=ord(c)-ord("a")
+            if cur.children[i]==None:
+                cur.children[i]=TrieNode()
+            cur=cur.children[i]
+        cur.end=True
 
     def search(self, word):
-        cur= self.root
+        cur=self.root
         for c in word:
-            if c not in cur.children:
+            i=ord(c)-ord("a")
+            if cur.children[i]==None:
                 return False
-            cur=cur.children[c]
-        return cur.endofword
-        
+            cur=cur.children[i]
+        return cur.end        
 
     def startsWith(self, prefix):
-        cur= self.root
+        cur=self.root
         for c in prefix:
-            if c not in cur.children:
+            i=ord(c)-ord("a")
+            if cur.children[i]==None:
                 return False
-            cur=cur.children[c]
+            cur=cur.children[i]
         return True
         
 
