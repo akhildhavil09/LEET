@@ -27,6 +27,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0046-permutations](https://github.com/akhildhavil09/LEET/tree/master/0046-permutations) |
 | [0078-subsets](https://github.com/akhildhavil09/LEET/tree/master/0078-subsets) |
 | [0079-word-search](https://github.com/akhildhavil09/LEET/tree/master/0079-word-search) |
+| [1036-rotting-oranges](https://github.com/akhildhavil09/LEET/tree/master/1036-rotting-oranges) |
 ## Backtracking
 |  |
 | ------- |
@@ -41,4 +42,9 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0079-word-search](https://github.com/akhildhavil09/LEET/tree/master/0079-word-search) |
+| [1036-rotting-oranges](https://github.com/akhildhavil09/LEET/tree/master/1036-rotting-oranges) |
+## Breadth-First Search
+|  |
+| ------- |
+| [1036-rotting-oranges](https://github.com/akhildhavil09/LEET/tree/master/1036-rotting-oranges) |
 <!---LeetCode Topics End-->
