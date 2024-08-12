@@ -2,6 +2,7 @@ class Solution(object):
     def canFinish(self, numCourses, prerequisites):
         graph={i:[] for i in range(numCourses)}
 
+
         for crs1,crs2 in prerequisites:
             graph[crs1].append(crs2)
 
