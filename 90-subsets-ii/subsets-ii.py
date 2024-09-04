@@ -1,19 +1,21 @@
-class Solution(object):
-    def subsetsWithDup(self, nums):
+class Solution:
+    def subsetsWithDup(self, nums: List[int]) -> List[List[int]]:
         res=[]
         nums.sort()
-        def dfs(i, cur):
-            if i==len(nums):
+        
+        def f(index,cur):
+            if index==len(nums):
                 res.append(cur[::])
                 return
-            # add subsset including i
-            cur.append(nums[i])
-            dfs(i+1, cur)
+            
+            cur.append(nums[index])
+            f(index+1,cur)
             cur.pop()
-            # add subsset not including i
-            while i+1< len(nums) and nums[i]==nums[i+1]:
-                i+=1
-            dfs(i+1, cur)
-        dfs(0,[])
+
+            while index+1<len(nums) and nums[index]==nums[index+1]:
+                index+=1
+            f(index+1,cur)
+        f(0,[])
+
         return res
-        
+            
