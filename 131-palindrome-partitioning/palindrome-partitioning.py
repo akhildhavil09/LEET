@@ -1,19 +1,27 @@
-class Solution(object):
-    def partition(self, s):
-        def palin(sub):
-            return sub==sub[::-1]
-        def parti(start,path):
-            if start==len(s):
+class Solution:
+    def partition(self, s: str) -> List[List[str]]:
+        res=[]
+        path=[]
+
+        def ispalindrome(s,start,end):
+            while start<=end:
+                if s[start]!=s[end]:
+                    return False
+                start+=1
+                end-=1
+            return True
+
+        def helper(index):
+            if index==len(s):
                 res.append(path[:])
                 return
-            
-            for end in range(start, len(s)):
-                substring= s[start:end+1]
-                if palin(substring):
-                    path.append(substring)
-                    parti(end+1,path)
+            for i in range(index,len(s)):
+                if ispalindrome(s,index,i):
+                    path.append(s[index:i+1])
+                    helper(i+1)
                     path.pop()
-        res=[]
-        parti(0,[])
-        return res
+
+
         
+        helper(0)
+        return res
