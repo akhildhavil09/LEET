@@ -5,11 +5,9 @@ class Solution:
             if nums[i]==target:
                 res[0]=i
                 break
-        
-        if res[0]!=-1:
-            for j in range(len(nums)-1,-1,-1):
-                if nums[j]==target:
-                    res[1]=j
-                    break
+        for j in range(len(nums)-1,-1,-1):
+            if nums[j]==target:
+                res[1]=j
+                break
         
         return res
