@@ -1,16 +1,15 @@
-class Solution(object):
-    def subsets(self, nums):
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
         res=[]
         subset=[]
 
-        def helper(i):
-            if i==len(nums):
-                res.append(subset[::])
-                return
-            subset.append(nums[i])
-            helper(i+1)
-            subset.pop()
-            helper(i+1)
-        
-        helper(0)
+        def backtrack(start):
+            res.append(subset.copy())
+
+            for i in range(start,len(nums)):
+                subset.append(nums[i])
+                backtrack(i+1)
+                subset.pop()
+
+        backtrack(0)
         return res
