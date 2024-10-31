@@ -13,11 +13,12 @@ class Solution:
         def helper(index):
             if index==len(s):
                 res.append(path[:])
-                return 
-            for i in range(index, len(s)):
+                return
+            for i in range(index,len(s)):
                 if ispalin(s,index,i):
                     path.append(s[index:i+1])
                     helper(i+1)
                     path.pop()
         helper(0)
         return res
+                
