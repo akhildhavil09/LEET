@@ -1,16 +1,15 @@
-class Solution(object):
-    def reverse(self, x):
-        rev=0
-        maxint= 2**31 -1
-        sign= -1 if x<0 else 1
+class Solution:
+    def reverse(self, x: int) -> int:
+        res=0
+        max_int= 2**31-1
+        sign=-1 if x<0  else 1
         x= abs(x)
 
-        while x:
-            digit=x%10
-            
-            if rev>maxint //10 or (rev==maxint //10  and digit >7):
+        while x>0:
+            temp=x%10
+            if res>max_int //10 or (res==max_int //10 and temp>7):
                 return 0
-            rev= (rev*10) + digit
-            
-            x//=10
-        return rev*sign
+            res= res*10+temp
+            x=x//10
+
+        return sign* res
