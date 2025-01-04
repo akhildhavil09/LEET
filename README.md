@@ -20,10 +20,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Two Pointers
 |  |
 | ------- |
+| [0026-remove-duplicates-from-sorted-array](https://github.com/akhildhavil09/LEET/tree/master/0026-remove-duplicates-from-sorted-array) |
 | [0567-permutation-in-string](https://github.com/akhildhavil09/LEET/tree/master/0567-permutation-in-string) |
 ## Array
 |  |
 | ------- |
+| [0026-remove-duplicates-from-sorted-array](https://github.com/akhildhavil09/LEET/tree/master/0026-remove-duplicates-from-sorted-array) |
 | [0035-search-insert-position](https://github.com/akhildhavil09/LEET/tree/master/0035-search-insert-position) |
 | [0046-permutations](https://github.com/akhildhavil09/LEET/tree/master/0046-permutations) |
 | [0053-maximum-subarray](https://github.com/akhildhavil09/LEET/tree/master/0053-maximum-subarray) |
